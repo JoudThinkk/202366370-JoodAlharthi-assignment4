@@ -13,6 +13,21 @@ body {
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+.skip-link {
+    position: absolute;
+    left: -9999px;
+    z-index: 1000;
+}
+
+.skip-link:focus {
+    left: 16px;
+    top: 16px;
+    background: #fff;
+    color: #216422;
+    padding: 10px;
+    border-radius: 4px;
+}
+
 .container {
     width: 85%;
     max-width: 1100px;
@@ -42,7 +57,24 @@ h2 {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 20px;
     padding: 0;
+}
+
+.main-nav {
+    display: flex;
+    gap: 18px;
+}
+
+.main-nav a {
+    color: #2c3e50;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.main-nav a:hover,
+.main-nav a:focus-visible {
+    color: #428943;
 }
 
 .theme-btn {
@@ -58,6 +90,24 @@ h2 {
 
 .theme-btn:hover {
     background: #5e8c5d;
+}
+
+.reveal {
+    opacity: 1;
+    transform: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .reveal {
+        opacity: 0;
+        transform: translateY(18px);
+        transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .reveal.is-visible {
+        opacity: 1;
+        transform: none;
+    }
 }
 /* 1. About Me Section using Flexbox */
 .about-section .container {
@@ -206,6 +256,14 @@ h2 {
 .badge.web { background: #e2f0d9; color: #385723; }
 .badge.network { background: #d9e1f2; color: #1f3864; }
 
+.repository-link {
+    display: inline-block;
+    margin-top: 12px;
+    color: #428943;
+    font-weight: 600;
+    text-decoration: none;
+}
+
 /* API States */
 .loading-state, .error-state {
     text-align: center;
@@ -295,6 +353,10 @@ body.dark-mode .site-footer {
     color: #bdc3c7;
 }
 
+body.dark-mode .main-nav a {
+    color: #ecf0f1;
+}
+
 body.dark-mode #project-search,
 body.dark-mode #visitor-name,
 body.dark-mode .form-group input,
@@ -333,4 +395,39 @@ body.dark-mode .form-group textarea {
 
 #toast-notification.error {
     background-color: #e74c3c;
+}
+
+@media (max-width: 720px) {
+    .header-container {
+        flex-wrap: wrap;
+    }
+
+    .main-nav {
+        order: 3;
+        width: 100%;
+        justify-content: space-between;
+        overflow-x: auto;
+    }
+
+    .container {
+        width: 90%;
+        padding: 28px 0;
+    }
+
+    .about-section .container {
+        align-items: flex-start;
+    }
+
+    .about-image {
+        margin: 0 auto;
+    }
+
+    .filter-buttons {
+        width: 100%;
+        flex-wrap: wrap;
+    }
+
+    .filter-btn {
+        flex: 1 1 140px;
+    }
 }
