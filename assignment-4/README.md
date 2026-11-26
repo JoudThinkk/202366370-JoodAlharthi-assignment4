@@ -1,7 +1,7 @@
-# Personal Portfolio Website - Assignment 3
+# Personal Portfolio Website - Assignment 4
 
 ## 🌟 Project Overview
-This repository contains the third and advanced iteration of my personal portfolio website, developed as part of **Assignment 3**. Building upon the interactive foundation of Assignment 2, this version introduces robust **API Integration** (fetching live repositories directly from GitHub), **Complex Logic & State Management** (real-time search and category filtering), and advanced client-side error handling to meet all professional evaluation criteria.
+This repository contains the final, polished iteration of my personal portfolio website, developed as part of **Assignment 4**. It combines responsive design, live GitHub API integration, search and category filtering, persistent theme preferences, personalized content, validation feedback, and accessible presentation into one complete web application.
 
 ---
 
@@ -42,13 +42,13 @@ This repository contains the third and advanced iteration of my personal portfol
 ## 📦 Setup Instructions
 1. Install a modern browser and, optionally, Visual Studio Code with the Live Server extension.
 2. Download or clone this repository.
-3. Open the `assignment-3` folder in Visual Studio Code.
+3. Open the `assignment-4` folder in Visual Studio Code.
 4. Open `index.html` with Live Server or double-click it in a browser.
 5. Keep an internet connection enabled for the live GitHub repository section.
 
 ## 📁 Project Directory Structure
 ```text
-assignment-3/
+assignment-4/
 ├── README.md
 ├── index.html
 ├── css/
@@ -64,7 +64,7 @@ assignment-3/
     └── technical-documentation.md
 ```
 3. **Open the Project:**
-   - Open **Visual Studio Code**, click on `File > Open Folder`, and select the extracted `assignment-3` folder.
+   - Open **Visual Studio Code**, click on `File > Open Folder`, and select the extracted `assignment-4` folder.
 
 4. **Launch the Website:**
    - **Method 1 (Quick Open):** Navigate to the project folder, locate the `index.html` file, and double-click it to open it directly in your default web browser.
@@ -73,7 +73,7 @@ assignment-3/
 
 ##  AI Usage Summary
 
-During the development of **Assignment 3**, Google Gemini was utilized responsibly and transparently as a collaborative assistant to enhance the learning and development process.
+During the development of **Assignment 4**, Google Gemini and Copilot SDK in VS Code were used responsibly and transparently as collaborative assistants.
 
 ### How AI Was Utilized:
 1. **Brainstorming & Logic Design:** 
