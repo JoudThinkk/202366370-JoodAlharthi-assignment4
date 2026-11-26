@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Personal Portfolio</title>
+    <link rel="stylesheet" href="css/styles.css"> 
+</head>
+<body>
+    <!-- Header & Theme Toggle -->
+    <header class="site-header">
+        <div class="container header-container">
+            <h1>Joud Alharthi</h1>
+            <button id="theme-toggle" class="theme-btn" aria-label="Toggle Dark/Light Mode">🌙 Dark Mode</button>
+        </div>
+    </header>
+    <!-- 1. About Me Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="about-content">
+                <h2>About Me</h2>
+                <p class="tagline">Joud Alharthi</p>
+                <p class="intro-text">
+                  I am a Computer Science student passionate about computer networks and cybersecurity. 
+                  I enjoy learning through hands on practice, working with others, and taking on new challenges.
+                </p>
+                <div class="greeting-widget">
+                    <label for="visitor-name">Try a personalized greeting:</label>
+                    <input type="text" id="visitor-name" name="visitor-name" placeholder="Enter your name" autocomplete="given-name">
+                    <p id="personal-greeting" aria-live="polite">Type your name to see a greeting.</p>
+                </div>
+            </div>
+            <div class="about-image">
+                <!-- Profile or placeholder image -->
+                <img src="images/JOOD-3.png" alt="Profile Picture" loading="eager">
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. Projects Section (Complex Logic: Filtering & Sorting) -->
+    <section id="projects" class="projects-section">
+        <div class="container">
+            <h2>Featured Projects</h2>
+            
+            <!-- Complex Logic Controls: Search & Filter -->
+            <div class="project-controls">
+                <input type="text" id="project-search" placeholder="Search projects..." aria-label="Search projects">
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-filter="all">All Projects</button>
+                    <button class="filter-btn" data-filter="web">Web Development</button>
+                    <button class="filter-btn" data-filter="network">Networking</button>
+                </div>
+            </div>
+
+            <div class="projects-grid" id="projects-container">
+                <!-- Project 1 -->
+                <div class="project-card" data-category="web">
+                    <img src="images/seraj.jpg" alt="Seraj Game project screenshot" loading="lazy">
+                    <div class="card-body">
+                        <h3>Seraj Game - SWE206</h3>
+                        <p>An interactive experience blending the virtual and real worlds to explore Saudi culture and heritage.</p>
+                        <span class="badge web">Web Development</span>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card" data-category="network">
+                    <img src="images/NET.jpeg" alt="NetAssist project screenshot">
+                    <div class="card-body">
+                        <h3>NetAssist - ICS343</h3>
+                        <p>A web based networking assistant developed as part of the Fundamentals of Computer Networks course.</p>
+                        <span class="badge network">Networking</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. API Integration Section (GitHub Repositories) -->
+    <section id="github-api" class="api-section">
+        <div class="container">
+            <h2>Live GitHub Repositories (API Integration)</h2>
+            <p class="api-subtitle">Fetched dynamically from GitHub API (@JoudThinkk)</p>
+            
+            <div id="github-loading" class="loading-state">Loading repositories from GitHub...</div>
+            <div id="github-error" class="error-state" style="display: none;"></div>
+            <div class="projects-grid" id="github-repos-container"></div>
+        </div>
+    </section>
+    <!-- 3. Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2>Contact Me</h2>
+            <form class="contact-form" novalidate>
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required placeholder="Enter your name">
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required placeholder="example@domain.com">
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="4" required placeholder="Type your message here..."></textarea>
+                </div>
+                
+                <button type="submit" class="submit-btn">Send Message</button>
+            </form>
+        </div>
+    </section>
+    <!-- Footer with Visitor Counter (Complex Logic / State) -->
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; 2026 Joud Alharthi. All rights reserved.</p>
+            <p id="visitor-counter">Visitor Count: <span id="count">1</span></p>
+        </div>
+    </footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>
