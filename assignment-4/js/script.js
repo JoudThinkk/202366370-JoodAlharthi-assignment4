@@ -9,6 +9,7 @@ const savedTheme = localStorage.getItem('theme');
 if (savedTheme === 'dark') {
     document.body.classList.add('dark-mode');
     themeToggleBtn.textContent = '☀️ Light Mode';
+    themeToggleBtn.setAttribute('aria-pressed', 'true');
 } else {
     themeToggleBtn.textContent = '🌙 Dark Mode';
 }
@@ -20,9 +21,11 @@ themeToggleBtn.addEventListener('click', () => {
     if (document.body.classList.contains('dark-mode')) {
         localStorage.setItem('theme', 'dark');
         themeToggleBtn.textContent = '☀️ Light Mode';
+        themeToggleBtn.setAttribute('aria-pressed', 'true');
     } else {
         localStorage.setItem('theme', 'light');
         themeToggleBtn.textContent = '🌙 Dark Mode';
+        themeToggleBtn.setAttribute('aria-pressed', 'false');
     }
 });
     // Visitor Counter State using localStorage
@@ -121,15 +124,31 @@ async function fetchGitHubRepos() {
         repos.forEach(repo => {
             const repoCard = document.createElement('div');
             repoCard.className = 'project-card';
-            repoCard.innerHTML = `
-                <div class="card-body">
-                    <h3>📂 ${repo.name}</h3>
-                    <p>${repo.description ? repo.description : 'No description provided.'}</p>
-                    <span class="badge web">⭐ ${repo.stargazers_count} | 🍴 ${repo.forks_count}</span>
-                    <br><br>
-                    <a href="${repo.html_url}" target="_blank" style="color: #7AAD7B; font-weight: 600; text-decoration: none;">View on GitHub &rarr;</a>
-                </div>
-            `;
+            const cardBody = document.createElement('div');
+            cardBody.className = 'card-body';
+
+            const title = document.createElement('h3');
+            title.textContent = `📂 ${repo.name}`;
+
+            const description = document.createElement('p');
+            description.textContent = repo.description || 'No description provided.';
+
+            const stats = document.createElement('span');
+            stats.className = 'badge web';
+            stats.textContent = `⭐ ${repo.stargazers_count} | 🍴 ${repo.forks_count}`;
+
+            const breakElement = document.createElement('br');
+            breakElement.style.marginBottom = '12px';
+
+            const link = document.createElement('a');
+            link.href = repo.html_url;
+            link.target = '_blank';
+            link.rel = 'noopener noreferrer';
+            link.className = 'repository-link';
+            link.textContent = 'View on GitHub →';
+
+            cardBody.append(title, description, stats, breakElement, link);
+            repoCard.appendChild(cardBody);
             containerEl.appendChild(repoCard);
         });
 
@@ -141,8 +160,29 @@ async function fetchGitHubRepos() {
 }
 
 window.addEventListener('DOMContentLoaded', fetchGitHubRepos);
+
+// ==========================================
+// 5. POLISHED SCROLL PRESENTATION
+// ==========================================
+const revealElements = document.querySelectorAll('.reveal');
+
+if ('IntersectionObserver' in window) {
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.12 });
+
+    revealElements.forEach(element => revealObserver.observe(element));
+} else {
+    revealElements.forEach(element => element.classList.add('is-visible'));
+}
+
    // ==========================================
-// 5. FORM VALIDATION & TOAST FEEDBACK
+// 6. FORM VALIDATION & TOAST FEEDBACK
 // ==========================================
 const contactForm = document.querySelector('.contact-form');
 
