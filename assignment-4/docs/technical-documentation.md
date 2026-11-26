@@ -1,7 +1,7 @@
-# Technical Documentation - Assignment 3
+# Technical Documentation - Assignment 4
 
 ## 1. Overview
-This technical documentation outlines the architecture, advanced technology stack, data handling, and structural design of the Personal Portfolio Website for **Assignment 3**. Building upon the static and interactive foundation of Assignment 2, this iteration introduces robust **API Integration** (fetching live repositories from GitHub), **Complex Logic & State Management** (real-time search and category filtering), and advanced client-side error handling to satisfy all professional grading criteria without requiring a backend server.
+This technical documentation describes the architecture and final implementation of the Personal Portfolio Website for **Assignment 4**. The application is a responsive, dependency-free client-side website that combines semantic HTML, CSS, browser APIs, and JavaScript without requiring a backend server.
 
 ## 2. Technology Stack & Implementation
 
@@ -32,7 +32,7 @@ This technical documentation outlines the architecture, advanced technology stac
 
 The project files are organized into dedicated subfolders for clarity, separation of concerns, and correct relative pathing:
 ```text
-assignment-3/
+assignment-4/
 │
 ├── README.md                   # Comprehensive project documentation & local setup instructions
 ├── index.html                  # Main entry point and document structure
@@ -45,8 +45,8 @@ assignment-3/
 │   ├── NET.jpeg
 │   └── seraj.jpg                 
 └── docs/
-    ├── ai-usage-report.md      # Detailed documentation of AI collaboration (Gemini)
-    └── technical-documentation.md # System architecture and implementation details for Assignment 3
+    ├── ai-usage-report.md      # Detailed documentation of AI collaboration
+    └── technical-documentation.md # System architecture and implementation details for Assignment 4
 
 ## 4. Feature Data Flow
 
