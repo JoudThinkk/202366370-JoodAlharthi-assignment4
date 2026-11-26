@@ -18,6 +18,7 @@ No AI-generated text or code was submitted without review and verification.
 | C03 | Copilot SDK in VS Code | 2026-11-26 | Added polished responsive presentation behavior. | `assignment-4/css/styles.css`, `assignment-4/js/script.js` | Added a reduced-motion-safe reveal effect, mobile navigation, repository link styling, and dark-theme navigation colors. Reviewed CSS and JavaScript syntax. |
 | C04 | Copilot SDK in VS Code | 2026-11-26 | Improved API rendering safety and theme accessibility. | `assignment-4/js/script.js` | Replaced dynamic repository `innerHTML` construction with DOM elements and text nodes, and synchronized the theme toggle's accessible pressed state. Verified JavaScript syntax and inspected API rendering code. |
 | C05 | Copilot SDK in VS Code | 2026-11-26 | Updated Assignment 4 documentation and AI declaration. | `assignment-4/README.md`, `assignment-4/docs/technical-documentation.md`, `assignment-4/docs/ai-usage-report.md` | Updated Assignment 4 details and setup/testing information, and added this declaration and usage log. Reviewed all paths and Markdown sections. |
+| C06 | Copilot SDK in VS Code | 2026-11-27 | Added LinkedIn and GitHub profile icon links in the website footer. | `assignment-4/index.html`, `assignment-4/css/styles.css`, `assignment-4/docs/ai-usage-report.md` | Added accessible, keyboard-focusable SVG links to the supplied profiles and styled them for light/dark themes and mobile. Verified link destinations and JavaScript syntax. |
 
 ## 3. Benefits & Challenges
 
